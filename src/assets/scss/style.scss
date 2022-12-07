@@ -1,0 +1,571 @@
+@import './reset.scss';
+@import './variable.scss';
+@import './register1.scss';
+@import './register2.scss';
+@import './register-done.scss';
+@import './story-writing.scss';
+
+// start body style 
+body {
+    font-family: 'kalameh';
+}
+
+/*start header style*/
+header {
+    background-color: rgba(250, 250, 250, 0.85);
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    transition: 0.4s;
+    box-shadow: 0px 4px 8px rgba(19, 29, 38, 0.05);
+
+    .container {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        height: 65px;
+        margin: 0px auto;
+    }
+
+    .header-logo {
+        flex-basis: 50%;
+    }
+
+    .header-box {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-basis: 50%;
+
+        &__search-icon {
+            padding-left: 20px;
+        }
+
+        &__sign-up-in {
+            padding: 8px 24px;
+            color: $primary-color;
+            @include text-button();
+            border: 1px solid #babdc0;
+            border-radius: $btn-radius;
+        }
+    }
+}
+
+.sticky-on {
+    background-color: white;
+    transition: 0.4s;
+    box-shadow: 2px 0px 2px 2px #b9b8b852;
+}
+
+/*end of header style*/
+/*start slider css*/
+.slider {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 692px;
+    padding: 0px 24px;
+    background: url(../img/slider-1.png) center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__arrow-icon {
+        @include arrow-slider();
+    }
+
+    .post-card {
+        padding: 32px;
+        transform: translateY(150px);
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 4px 10px 35px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(50px);
+        border-radius: 12px;
+
+        &__title {
+            color: white;
+        }
+
+        &__subtitle {
+            color: #CCCCCC;
+        }
+
+        &__author-name {
+            color: white;
+        }
+
+        &__author-time {
+            color: #CCCCCC;
+        }
+
+        &__seperator {
+            color: white;
+        }
+    }
+}
+
+// end of slider style
+// start horizontal post content
+.horizontal-post-content {
+    margin: 0px 0px 100px;
+
+    .container {
+        @include center-elements();
+        column-gap: 5px;
+    }
+}
+
+.post-card {
+    &__author {
+        display: flex;
+        align-items: center;
+        padding-bottom: 8px;
+        padding-top: 32px;
+
+        &-img {
+            padding-left: 12px;
+        }
+
+        &-name {
+            @include typography-body2-reg();
+        }
+
+        &-time {
+            @include typography-Small-Text();
+            color: #888;
+        }
+    }
+
+    &__image {
+        width: 374px;
+        height: 247px;
+        overflow: hidden;
+        position: relative;
+        border-radius: 4px;
+    }
+
+    &__title {
+        margin: 8px 0;
+        padding-left: 12px;
+        @include Subtitle();
+    }
+
+    &__subtitle {
+        @include typography-body-reg();
+    }
+
+    &__badge {
+        display: flex;
+        align-items: baseline;
+        padding-top: 14px;
+    }
+
+    &__seperator {
+        margin: 0px 8px;
+    }
+
+    &__category {
+        @include category-button();
+    }
+
+    &__reading-time {
+        @include typography-Small-Text();
+        color: #8593A6;
+    }
+
+    &__vertical {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__vertical-img {
+        padding-left: 20px;
+    }
+}
+
+figure.post-card__image:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #288fee42;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.post-card:hover figure.post-card__image:after {
+    transform: translateY(0);
+    transition: 0.3s;
+    opacity: 1;
+}
+
+// end of horizontal post content
+/// post card vertical styles start here
+.vertical-post-content {
+    margin-bottom: 60px;
+
+    .container {
+        @include center-elements(column);
+        gap: 36px;
+
+    }
+
+    .image-vertical {
+        width: 586px;
+        height: 387px;
+    }
+}
+
+/// post card vertical styles ends here
+// start STYLE of all element in <<< post single body >>>
+.post-single {
+    @include center-elements();
+
+    &__body {
+        overflow: auto;
+    }
+
+    &__featured-img {
+        width: 798px;
+        height: 528px;
+    }
+}
+
+.post-single {
+    background-color: #fff;
+    margin: auto;
+    overflow: hidden;
+    font-family: kalameh;
+    @include center-elements();
+    flex-direction: column;
+
+    &__body {
+        width: 800px;
+    }
+
+    &__holder {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 1200px;
+    }
+
+    &__rightside {
+        padding-left: 20px;
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        min-height: 200px;
+
+    }
+
+    &__image {
+        width: 798px;
+        height: 528px;
+        border-radius: 4px;
+        background-size: contain;
+        padding-top: 32px;
+
+    }
+
+    &__heading-title {
+        @include H2();
+    }
+
+    &__subtitle {
+        @include typography-body-reg();
+    }
+
+    &__author {
+        padding: 14px 0;
+        display: flex;
+        align-items: center;
+
+        &-img {
+            border-radius: 50%;
+            height: 48px;
+            width: 48px;
+            margin-top: auto;
+            padding-left: 10px;
+        }
+
+        &-name {
+            @include typography-body2-reg();
+        }
+
+        &-time {
+            @include typography-Small-Text();
+        }
+
+        &-time {
+            color: #888;
+        }
+    }
+
+    &__badge {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: kalameh;
+
+    }
+
+    &__badge_blue {
+        background-color: #DEEAF5;
+        @include typography-Small-Text();
+        color: $primary-color;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 0;
+        font-size: 11px;
+    }
+
+    &__badge__reading-time {
+        font-size: 11px;
+    }
+
+    &__body-text {
+        @include typography-body-reg();
+        padding: 24px 0 32px 0;
+
+        &-h3 {
+            @include H3();
+            padding: 32px 0 16px 0;
+        }
+
+        &-img {
+            width: 798px;
+            height: 528px;
+            border-radius: 4px;
+            background-size: contain;
+            padding: 32px 0 24px 0;
+        }
+
+    }
+
+    &__related-post {
+        & .container-post-single {
+            @include center-elements();
+            column-gap: 5px;
+            width: 1200px;
+            padding-top: 20px;
+        }
+    }
+
+    &__related-post-author {
+        @include H3();
+        border-bottom: 2px solid $primary-color;
+    }
+
+    &__comments {
+
+        &-box {
+            @include center-elements(column, 800px);
+            margin: 0 auto;
+            @include H3();
+        }
+
+        &-title {
+            border-bottom: 2px solid $primary-color;
+            padding: 8px 0;
+        }
+
+        &_form_title {
+            @include Subtitle();
+        }
+
+        &__writer {
+
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0 6px 0;
+        }
+
+        &__writer-name {
+            @include Body-Bold();
+        }
+
+        &__writer-date {
+            @include Small-Text;
+            color: #8593A6;
+
+        }
+
+        &__text {
+            @include typography-body-reg();
+
+        }
+
+        &_seperator {
+            color: $primary-color;
+            border: 1px solid rgba(19, 158, 202, 0.3);
+            width: 100%;
+        }
+    }
+
+}
+
+.comment-form {
+    padding-bottom: 100px;
+
+    &__inputbox {
+        border: none;
+        color: #00365b;
+        width: 100%;
+        padding: 7px 0px;
+        background: transparent;
+        overflow: visible;
+        font-family: inherit;
+        font-size: 100%;
+        border-radius: 2px;
+        border-bottom: 2px solid #406080;
+    }
+
+    &__title {
+        @include Subtitle();
+        padding: 14px 0 16px 0;
+    }
+
+    &__name {
+        flex: 0 1 25%;
+        @include typography-body-reg();
+        padding-left: 15px;
+    }
+
+    &__name,
+    &__family,
+    &__email {
+        background: transparent;
+        color: $text-3;
+    }
+
+    &__family {
+        flex: 0 1 25%;
+        @include typography-body-reg();
+        padding-left: 15px;
+    }
+
+    &__email {
+        flex: 0 1 calc(100% - 30px - 50%);
+        ;
+        @include typography-body-reg();
+    }
+
+    &__message {
+        flex: 0 1 100%;
+        @include typography-body-reg();
+
+        & textarea {
+            font-size: 14px;
+            border: none;
+            border-bottom: 2px solid #406080;
+            @include typography-body-reg();
+            font-family: kalameh;
+            width: 100%;
+            padding-top: 39px;
+            resize: vertical;
+            min-height: 50px;
+
+            &:focus {
+                border: none;
+                border-bottom: 2px solid $primary-color;
+            }
+
+            &:focus-visible {
+                outline: auto 0px;
+            }
+        }
+    }
+
+    &__button {
+        @include Text-Button();
+        padding: 8px 24px;
+        border-radius: 4px;
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        align-self: flex-end;
+        margin-top: 32px;
+    }
+
+    &__fields {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        & input:focus {
+            border-bottom: 2px solid $primary-color;
+        }
+
+        & input:focus-visible {
+            outline: -webkit-focus-ring-color auto 0px;
+        }
+
+
+    }
+}
+
+
+/*start footer style*/
+footer {
+    background: url(../img/Pattern-footer.svg) rgba(35, 47, 61, 1) no-repeat center left;
+    border-radius: 10px 10px 0px 0px;
+    height: 131px;
+    padding: 37px 0;
+
+
+    .container {
+        display: flex;
+        max-width: 1500px;
+        margin: 0px auto;
+    }
+
+    .about-helium {
+        display: flex;
+        align-items: center;
+        flex-basis: 50%;
+        height: 131px;
+
+        &__description {
+            padding-right: 40px;
+            @include typography-body2-reg(white);
+        }
+    }
+
+    .footer-navbar {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-basis: 50%;
+
+        &__menu {
+            display: flex;
+        }
+
+        &__item-link {
+            padding: 0px 20px;
+            color: white;
+            @include typography-link();
+        }
+
+    }
+}
+
+// end of footer style
+
+
+
+
+// End STYLE of all element in post single body
+
+//responsive code
+@import './responsive.scss';

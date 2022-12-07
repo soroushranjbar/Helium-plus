@@ -1,0 +1,257 @@
+@import './responsive.scss';
+// add mixin 
+@mixin category-button {
+    padding: 2px 8px 3px;
+    background-color: #DEEAF5;
+    @include typography-Small-Text();
+    color: $primary-color;
+    border-radius: $btn-radius;
+    @include responsive(phone){
+        padding: 2px 6px 3px;
+        font-size: 9px;
+    }
+    @include responsive(tablet){
+        padding: 2px 6px 3px;
+    }
+}
+
+@mixin center-elements($dir:row, $maxWidth:1200px, $justify-content:center, $align-items:center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    max-width: $maxWidth;
+    margin: 0px auto;
+    @include responsive(phone){
+        padding: 0px 10px;
+    }
+    @include responsive(tablet){
+        padding: 0px 10px;
+    }
+}
+
+@mixin text-button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    @include responsive(phone){
+        font-size: 12px;
+        line-height: 20px;
+    }
+    @include responsive(tablet){
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+@mixin typography-body-reg($align:right) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    text-align: $align;
+    @include responsive(phone){
+        font-size: 12px;
+        line-height: 20px;
+    }
+    @include responsive(tablet){
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@mixin typography-body2-reg($color:#28394F) {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: right;
+    color: $color;
+    @include responsive(phone){
+        font-size: 11px;
+        line-height: 20px;
+    }
+    @include responsive(tablet){
+        font-size: 12px;
+        line-height: 20px;
+    }
+}
+
+@mixin typography-link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: right;
+    @include responsive(phone){
+        font-size: 14px;
+    }
+    @include responsive(tablet){
+        font-size: 16px;
+    }
+}
+
+@mixin typography-Small-Text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 19px;
+    text-align: right;
+    @include responsive(phone){
+        font-size: 8px;
+    }
+    @include responsive(tablet){
+        font-size: 10px;
+    }
+}
+
+@mixin arrow-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    @include responsive(phone){
+        padding: 5px;
+    }
+    @include responsive(tablet){
+        padding: 8px;
+    }
+
+}
+
+@mixin Text-Button {
+    font-family: Kalameh;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: right;
+}
+
+@mixin H2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0em;
+    text-align: right;
+    @include responsive(phone){
+        font-size: 20px;
+        line-height: 30px;
+    }
+    @include responsive(tablet){
+        font-size: 22px;
+        line-height: 30px;
+    }
+}
+
+@mixin H3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: right;
+    @include responsive(phone){
+        font-size: 18px;
+        line-height: 30px;
+    }
+    @include responsive(tablet){
+        font-size: 19px;
+        line-height: 30px;
+    }
+
+}
+
+@mixin Body-Bold {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: right;
+}
+
+@mixin Small-Text {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: right;
+
+}
+
+@mixin typograghy-Text-1 {
+    font-family: kalameh;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: right;
+}
+
+@mixin Subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: right;
+    @include responsive(phone){
+        font-size: 15px;
+        line-height: 28px;
+    }
+    @include responsive(tablet){
+        font-size: 16px;
+        line-height: 30px;
+    }
+}
+
+// add font face 
+@font-face {
+    font-family: kalameh;
+    font-style: normal;
+    font-weight: 400;
+    src: url("./src/assets/font/KalamehWeb-Regular.woff") format("woff")
+}
+
+@font-face {
+    font-family: kalameh;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./src/assets/font/KalamehWeb-Regular.woff") format("woff")
+}
+
+@font-face {
+    font-family: kalameh;
+    font-style: bold;
+    font-weight: 700;
+    src: url("./src/assets/font/KalamehWeb-Regular.woff") format("woff")
+}
+//asas
+@font-face {
+    font-family: kalameh;
+    font-style: normal;
+    font-weight: 600;
+    src: url("./src/assets/font/Kalameh-Bold.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: kalameh;
+    font-style: normal;
+    font-weight: 500;
+    src: url("./src/assets/font/Kalameh-Medium.ttf") format("ttf")
+}
+
+@font-face {
+    font-family: kalameh;
+    font-style: bold;
+    font-weight: 700;
+    src: url("./src/assets/font/Kalameh-Regular.ttf") format("ttf")
+}
+
+// add varible 
+$primary-color:rgba(32, 139, 238, 1);
+$btn-radius : 4px;
+$text-3:#8593A6;
+$error-color:#E53222;
+$gray-bg:#EDEDED;
