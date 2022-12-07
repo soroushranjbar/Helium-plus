@@ -28,6 +28,3 @@ src/assets/css/style.css.map
 *.njsproj
 *.sln
 *.sw?
-
-package-lock.json
-package.json
